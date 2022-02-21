@@ -48,10 +48,10 @@ class SppagebuilderAddonImmobilien extends SppagebuilderAddons{
 							<div class="slideshow-container' . $this->addon->id . '">';
 
 		foreach ($settings->sp_tab_image as $key => $slide) {
-			$image = (isset($slide->image) && $slide->image) ? ' '. $slide->image . ' ' : '';
+			$image = (isset($slide->image) && $slide->image) ? $slide->image : '';
 			$image_src = isset($image->src) ? $image->src : $image;
 			$output .= '<div class="mySlides' . $this->addon->id . ' fade">
-							<img src="' . substr($image_src, 1) . '">
+							<img src="' . $image_src . '">
 						</div>';
 		}		
 		$output .= '
